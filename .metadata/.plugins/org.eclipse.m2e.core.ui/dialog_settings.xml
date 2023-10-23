@@ -2,6 +2,10 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\samrutka\Desktop\SpringBootUdemy\practicemicroservice\service-registry"/>
+			<item value="C:\Users\samrutka\Desktop\SpringBootUdemy\practicemicroservice\employee-service"/>
+			<item value="C:\Users\samrutka\Desktop\SpringBootUdemy\practicemicroservice\department-service"/>
+			<item value="C:\Users\samrutka\Desktop\SpringBootUdemy\practicemicroservice\department-service\department-service"/>
 			<item value="C:\Users\samrutka\Desktop\SpringBootUdemy\practicemicroservice-master\Config-Server"/>
 			<item value="C:\Users\samrutka\Desktop\SpringBootUdemy\practicemicroservice-master\service-registry"/>
 			<item value="C:\Users\samrutka\Desktop\SpringBootUdemy\practicemicroservice-master\employee-service"/>

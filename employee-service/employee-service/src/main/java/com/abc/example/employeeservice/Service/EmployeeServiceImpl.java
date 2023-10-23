@@ -1,11 +1,13 @@
 package com.abc.example.employeeservice.Service;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
-
 
 import com.abc.example.employeeservice.Dto.ApiResponseDto;
 import com.abc.example.employeeservice.Dto.DepartmentDto;
@@ -21,6 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	private EmployeeRepository employeeRepository;
 //	@Autowired
 //	priavte RestTemplate restTemplate;
+ 
 
 //	@Autowired 
 //	 private WebClient webClient;
@@ -28,6 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	private APIClient apiClient;
 
+	
 	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
 		super();
 		this.employeeRepository = employeeRepository;
@@ -67,4 +71,5 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return apiResponseDto;
 	}
 
+	
 }

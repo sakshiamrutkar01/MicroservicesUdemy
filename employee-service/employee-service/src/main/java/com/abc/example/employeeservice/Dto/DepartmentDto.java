@@ -25,6 +25,13 @@ public class DepartmentDto {
 		return id;
 	}
 
+	public DepartmentDto(String departmentName, String departmentDescription, String departmentCode) {
+		super();
+		this.departmentName = departmentName;
+		this.departmentDescription = departmentDescription;
+		this.departmentCode = departmentCode;
+	}
+
 	public void setId(String id) {
 		this.id = id;
 	}

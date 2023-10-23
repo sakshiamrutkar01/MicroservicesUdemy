@@ -30,11 +30,12 @@
     <fullyQualifiedTypeName name="org.springframework.web.reactive.function.client.WebClient"/>
     <fullyQualifiedTypeName name="org.springframework.cloud.openfeign.EnableFeignClients"/>
     <fullyQualifiedTypeName name="org.springframework.cloud.openfeign.FeignClient"/>
-    <fullyQualifiedTypeName name="com.abc.example.employeeservice.Dto.DepartmentDto"/>
     <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"/>
     <fullyQualifiedTypeName name="org.springframework.cloud.config.server.EnableConfigServer"/>
     <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.EnableEurekaClient"/>
     <fullyQualifiedTypeName name="com.abc.example.employeeservice.Dto.ApiResponseDto"/>
     <fullyQualifiedTypeName name="com.abc.example.employeeservice.Dto.EmployeeDto"/>
     <fullyQualifiedTypeName name="com.abc.example.employeeservice.Service.EmployeeService"/>
+    <fullyQualifiedTypeName name="com.abc.example.employeeservice.Dto.DepartmentDto"/>
+    <fullyQualifiedTypeName name="io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker"/>
 </qualifiedTypeNameHistroy>
