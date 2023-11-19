@@ -19,13 +19,13 @@ public interface APIClient {
 
 	
 	//@CircuitBreaker( name = "DEPARTMENT-SERVICE", fallbackMethod="getDepartmentByCodeFallback")
-	@Retry( name = "DEPARTMENT-SERVICE", fallbackMethod="getDepartmentByCodeFallback")
+	//@Retry( name = "DEPARTMENT-SERVICE", fallbackMethod="getDepartmentByCodeFallback")
 	@GetMapping("api/departments/{department-code}")
 	    public ResponseEntity<DepartmentDto> getDepartment(@PathVariable("department-code") String departmentCode);
 	
-	 default DepartmentDto getDepartmentByCodeFallback(String code, Throwable exception) {
-	        System.out.println("Param: " + code);
-	        System.out.println(exception.getLocalizedMessage());
-	        return new DepartmentDto("R&D", "R&D department", "RD13");
-	    }
+//	 default DepartmentDto getDepartmentByCodeFallback(String code, Throwable exception) {
+//	        System.out.println("Param: " + code);
+//	        System.out.println(exception.getLocalizedMessage());
+//	        return new DepartmentDto("R&D", "R&D department", "RD13");
+//	    }
 }

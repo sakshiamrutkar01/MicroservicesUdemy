@@ -1,6 +1,5 @@
 package com.abc.example.employeeservice.Service;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import com.abc.example.employeeservice.Dto.ApiResponseDto;
 import com.abc.example.employeeservice.Dto.DepartmentDto;
 import com.abc.example.employeeservice.Dto.EmployeeDto;
+import com.abc.example.employeeservice.Dto.OrganizationDto;
 import com.abc.example.employeeservice.Entity.Employee;
 import com.abc.example.employeeservice.Mapper.EmployeeMapper;
 import com.abc.example.employeeservice.Repository.EmployeeRepository;
@@ -23,15 +23,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	private EmployeeRepository employeeRepository;
 //	@Autowired
 //	priavte RestTemplate restTemplate;
- 
 
 //	@Autowired 
 //	 private WebClient webClient;
 
 	@Autowired
 	private APIClient apiClient;
-
-	
+	@Autowired
+    private OrganizationApiClient organizationApiClient;
 	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
 		super();
 		this.employeeRepository = employeeRepository;
@@ -62,14 +61,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 		ResponseEntity<DepartmentDto> responseEntity = apiClient.getDepartment(employee.getDepartmentCode());
 		DepartmentDto departmentDto = responseEntity.getBody();
-		EmployeeDto employeeDto = new EmployeeDto(employee.getId(), employee.getFirstName(), employee.getLastName(),
-				employee.getEmail(), employee.getDepartmentCode());
+//		EmployeeDto employeeDto = new EmployeeDto(employee.getId(), employee.getFirstName(), employee.getLastName(),
+//				employee.getEmail(), employee.getDepartmentCode());
 
+		ResponseEntity<OrganizationDto> responseEntity1 = organizationApiClient.getOrganization(employee.getOrganizationCode());
+		OrganizationDto organizationDto = responseEntity1.getBody();
+		EmployeeDto employeeDto = new EmployeeDto(employee.getId(), employee.getFirstName(), employee.getLastName(),
+				employee.getEmail(), employee.getDepartmentCode(), employee.getOrganizationCode());
 		ApiResponseDto apiResponseDto = new ApiResponseDto();
 		apiResponseDto.setEmployeeDto(employeeDto);
 		apiResponseDto.setDepartmentDto(departmentDto);
+		apiResponseDto.setOrganizationDto(organizationDto);
 		return apiResponseDto;
 	}
 
-	
 }
